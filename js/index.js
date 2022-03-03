@@ -20,14 +20,42 @@ function GetAsync(theUrl, callback)
     xmlHttp.send(null);
 }
 
+function htmlToElement(html) {
+    var template = document.createElement('template');
+    html = html.trim(); // Never return a text node of whitespace as the result
+    template.innerHTML = html;
+    return template.content.firstChild;
+}
+
+function updateTemplates(){
+
+    var templates = document.querySelectorAll("template");
+    templates.forEach(c => {        
+        var template = c.innerHTML;
+        var tag = template.split(/[\{\}]/)[1];
+        var components = document.querySelectorAll(tag);
+         components.forEach(t => {
+            var content = t.innerHTML;
+            var newHtml = template.replace("{"+tag+"}", content);
+            var newElement = htmlToElement(newHtml);
+            t.parentElement.replaceChild(newElement, t);
+        });
+    });
+    
+
+}
+
 
 function GetData(){
     const dataUrl = "https://raw.githubusercontent.com/mensaco/nagruj/main/data/doc.json?v=2";
     GetAsync(dataUrl, function(data){
 
+        updateTemplates();
+
         const d = JSON.parse(data);
 
         var model = new ViewModel();
+
         
         // apply bindings
         ko.applyBindings(model);
