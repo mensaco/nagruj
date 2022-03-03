@@ -2,6 +2,8 @@ function ViewModel() {
     var self = this;
     self.pageTitle = ko.observable();
     self.address = ko.observable();
+    self.openingHours = ko.observable();
+
 }
 
 function GetAsync(theUrl, callback)
@@ -28,6 +30,7 @@ function GetData(){
 
         model.pageTitle(d["PageTitle"]);
         model.address(d["Address"]);
+        model.openningHours(d["OpeningHours"]);
 
     });
 }
