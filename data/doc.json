@@ -1,8 +1,14 @@
 {
     "PageTitle":"Praxis Jurgan",
+    "Services":[
+        "Leistung 1",
+        "Leistung 2",
+        "Leistung 3"
+    ],
     "Address":"Reichsstraße 56, 53125 Bonn",
     "GoogleMapsUrl":"https://www.google.com/maps/dir//praxis+Jurgan+bonn/@50.6784099,7.0006887,12z/data=!3m1!4b1!4m9!4m8!1m0!1m5!1m1!1s0x47bee25bde5cbcc5:0x178a16ff3e081fec!2m2!1d7.0708999!2d50.678431!3e0",
     "Phone":"0228 92120850",
+    "Fax":"0228 92120849",
     "OpeningHours": [
         ["Montag","08:00-12:00 und 15:00-17:00"],
         ["Dienstag","08:00-12:00"],

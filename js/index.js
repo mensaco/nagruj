@@ -1,7 +1,10 @@
 function ViewModel() {
     var self = this;
     self.pageTitle = ko.observable();
+    self.services = ko.observableArray([]);
     self.address = ko.observable();
+    self.phone = ko.observable();
+    self.fax = ko.observable();
     self.openingHours = ko.observable();
 
 }
@@ -31,7 +34,10 @@ function GetData(){
 
         // initialize values 
         model.pageTitle(d["PageTitle"]);
+        model.services(d["Services"]);
         model.address(d["Address"]);
+        model.phone(d["Phone"]);
+        model.fax(d["Fax"]);
         model.openingHours(d["OpeningHours"]);
 
     });

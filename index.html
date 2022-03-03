@@ -9,31 +9,60 @@
     <link href="/css/Styles.css" rel="stylesheet" />
     <script src='/js/knockout-min.js'></script>
     <script src='https://cdn.tailwindcss.com'></script>
-    
+
 </head>
 
 <body>
 
+    <script type="text/html" id="frame_a">
+        <div class="max-w-sm border border-sky-200 mb-5">
+            <div class="bg-sky-50 p-1">
+                
+            </div>
+        </div>
+        
+    </script>
+
     <div class="p-1 sm:p-3">
         <img class="min-h-[8rem] object-cover" src="/img/background.jpg">
 
-    </div>
 
 
-    <div><label>Page title: <span data-bind="text: pageTitle()"></span></label></div>
-    <div><label>Address: <span data-bind="text: address()"></span></label></div>
-    <div><label>Öffnungszeiten:</label>
-    <div class="ml-2 max-w-xs">
-        <div data-bind="foreach: openingHours">
 
-            <div class="flex justify-between w-full">
-                <div data-bind="text: $data[0]"></div>
-                <div data-bind="text: $data[1]"></div>
+        <div data-bind="text: pageTitle()" class="text-sky-700 text-2xl m-1 mb-5"></div>
+           
+        <div class="max-w-sm border border-sky-200 mb-5">
+            <div class="bg-sky-50 p-1">
+                <div class="bg-sky-500 text-sky-100 round p-1">Adresse:</div>
+                <div class="text-sky-700" data-bind="text: address"></div>
             </div>
         </div>
+
+                   
+        <div class="max-w-sm border border-sky-200 mb-5">
+            <div class="bg-sky-50 p-1">
+                <div class="bg-sky-500 text-sky-100 round p-1">Kontakt:</div>
+                <div class="flex justify-between items-center">
+                    <div class="text-sky-700 p-1">Telefon:</div>
+                    <div class="text-sky-700" data-bind="text: phone"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-sm border border-sky-200 mb-5">
+            <div class="bg-sky-50 p-1">
+                <div class="bg-sky-500 text-sky-100 round p-1">Öffnungszeiten:</div>
+                <div data-bind="foreach: openingHours">
+                    <div class="flex justify-between items-center">
+                        <div class="text-sky-700 p-1" data-bind="text: $data[0]"></div>
+                        <div class="text-sky-700" data-bind="text: $data[1]"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
-    </div>
-    
 
 </body>
 
