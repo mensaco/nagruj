@@ -19,7 +19,7 @@ function GetAsync(theUrl, callback)
 
 
 function GetData(){
-    const dataUrl = "https://raw.githubusercontent.com/mensaco/nagruj/main/data/doc.json";
+    const dataUrl = "https://raw.githubusercontent.com/mensaco/nagruj/main/data/doc.json?v=1";
     GetAsync(dataUrl, function(data){
 
         const d = JSON.parse(data);
