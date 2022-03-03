@@ -25,12 +25,14 @@ function GetData(){
         const d = JSON.parse(data);
 
         var model = new ViewModel();
-        // Activates knockout.js
+        
+        // apply bindings
         ko.applyBindings(model);
 
+        // initialize values 
         model.pageTitle(d["PageTitle"]);
         model.address(d["Address"]);
-        model.openningHours(d["OpeningHours"]);
+        model.openingHours(d["OpeningHours"]);
 
     });
 }
