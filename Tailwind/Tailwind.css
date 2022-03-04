@@ -4,8 +4,11 @@
 
 @layer components {
 
+    template {
+        @apply hidden;
+    }
 
-    input {
+    /* input {
         @apply border border-gray-300 w-full p-2;
     }
 
@@ -35,6 +38,6 @@
 
     .btn-slate {
         @apply bg-slate-200 hover:bg-slate-400 mb-4 px-3 py-2 rounded shadow-lg shadow-slate-200/50 hover:shadow-slate-400/50 text-slate-900;
-    }
+    } */
 
 }
