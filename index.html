@@ -17,7 +17,7 @@
     <!-- begin templates -->
 
     <template>
-        <div class="mb-5 bg-sky-50/50">
+        <div class="mb-5 bg-sky-50/50 shadow-md">
             <div class="p-1 px-3">
                 {frame_a}
             </div>
@@ -36,13 +36,13 @@
     </template>
 
     <template>
-        <div class="text-2xl text-cyan-500 round py-1">{hdr}</div>
+        <div class="text-3xl text-teal-700 round py-1">{hdr}</div>
     </template>
 
     <!-- end templates -->
 
 
-    <div class="p-1 sm:p-3 max-w-screen-xl mx-auto">
+    <div class="p-1 sm:p-3 max-w-screen-xl mx-auto text-sky-700">
 
         <div class="sticky top-3 h-10 bg-sky-500">
             <div class=" h-full flex justify-start items-center gap-x-[1px]">
@@ -99,10 +99,10 @@
 
         <div class="md:relative">
 
-            <img class="min-h-[12rem] object-cover mb-5" src="/img/background.jpg">
+            <img class="min-h-[12rem] object-cover mb-5 shadow-lg" src="/img/background.jpg">
 
             <div class="md:absolute md:top-10 left-4 md:bg-sky-300/10 md:p-3">
-                <div data-bind="text: MainTitle()" class="text-sky-700 text-2xl m-1"></div>
+                <div data-bind="text: MainTitle()" class="text-2xl m-1"></div>
                 <div data-bind="text: MainSubtitle()" class="text-sky-500 m-1"></div>
             </div>
         </div>
@@ -124,18 +124,16 @@
                 <div class="">
                     <frame_a>
                         <hdr>Adresse:</hdr>
-                        <div class="text-sky-700" data-bind="text: Address"></div>
+                        <div class="" data-bind="text: Address"></div>
                     </frame_a>
                     <frame_a>
                         <hdr>Kontakt:</hdr>
-                        <frame_b>
-                            <div class="text-sky-700 p-1">Telefon:</div>
-                            <div class="text-sky-700" data-bind="text: Phone"></div>
-                        </frame_b>
-                        <frame_b>
-                            <div class="text-sky-700 p-1">Fax:</div>
-                            <div class="text-sky-700" data-bind="text: Fax"></div>
-                        </frame_b>
+                        <div data-bind="foreach: Contact">
+                            <frame_b>
+                                <div class="p-1" data-bind="text: $data[0]"></div>
+                                <div class="" data-bind="text: $data[1]"></div>
+                            </frame_b>
+                        </div>
                     </frame_a>
                 </div>
                 <div>
@@ -143,8 +141,8 @@
                         <hdr>Öffnungszeiten:</hdr>
                         <div data-bind="foreach: OpeningHours">
                             <frame_b>
-                                <div class="text-sky-700 p-1" data-bind="text: $data[0]"></div>
-                                <div class="text-sky-700" data-bind="text: $data[1]"></div>
+                                <div class="p-1" data-bind="html: $data[0]"></div>
+                                <div class="" data-bind="html: $data[1]"></div>
                             </frame_b>
                         </div>
                     </frame_a>
@@ -157,7 +155,7 @@
                 <frame_a>
                     <hdr>Leistungen:</hdr>
                     <div data-bind="foreach: Services">
-                        <div class="text-lg text-sky-700 p-1" data-bind="text: $data[0]"></div>
+                        <div class="text-lg p-1" data-bind="text: $data[0]"></div>
                         <ul class="list-disc ml-3 mb-5 p-3" data-bind="foreach: $data[1]">
                             <li class="ml-5" data-bind="text: $data">
 
