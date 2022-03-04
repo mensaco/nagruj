@@ -1,11 +1,7 @@
 function ViewModel() {
-    var self = this;
-    self.pageTitle = ko.observable();
-    self.services = ko.observableArray([]);
-    self.address = ko.observable();
-    self.phone = ko.observable();
-    self.fax = ko.observable();
-    self.openingHours = ko.observable();
+    // string and array properties will be defined down below
+    // just after populating the json data object 
+    // from the json file
 
 }
 
@@ -27,6 +23,7 @@ function htmlToElement(html) {
     return template.content.firstChild;
 }
 
+// allow for using templated controls
 function updateTemplates(){
 
     var templates = document.querySelectorAll("template");
@@ -47,26 +44,41 @@ function updateTemplates(){
 
 
 function GetData(){
-    const dataUrl = "https://raw.githubusercontent.com/mensaco/nagruj/main/data/doc.json?v=2";
+    const dataUrl = "data/doc.json?v=2";
     GetAsync(dataUrl, function(data){
 
+        // fix DOM before processing any data
         updateTemplates();
 
+        // get data from Json file
         const d = JSON.parse(data);
 
+        // prepare the model
         var model = new ViewModel();
 
+        // extract defined keys for the model
+        var jsonKeys = Object.keys(d);
+        
+        // define and initialize each key ...
+        jsonKeys.forEach(k => {
+
+            if(typeof d[k] == 'string'){
+                model[k] = ko.observable(d[k]); // .. as ko Observable 
+            }
+            else if(Array.isArray(d[k])){
+                model[k] = ko.observableArray(d[k]); // .. as ko Observable Array
+            }
+            else{
+                
+            }
+        });
+
+        
         
         // apply bindings
         ko.applyBindings(model);
 
-        // initialize values 
-        model.pageTitle(d["PageTitle"]);
-        model.services(d["Services"]);
-        model.address(d["Address"]);
-        model.phone(d["Phone"]);
-        model.fax(d["Fax"]);
-        model.openingHours(d["OpeningHours"]);
+
 
     });
 }

@@ -34,11 +34,12 @@
     <div class="p-1 sm:p-3">
         <img class="min-h-[8rem] object-cover" src="/img/background.jpg">
 
-        <div data-bind="text: pageTitle()" class="text-sky-700 text-2xl m-1 mb-5"></div>
+        <div data-bind="text: MainTitle()" class="text-sky-700 text-2xl m-1 mb-3"></div>
+        <div data-bind="text: MainSubtitle()" class="text-sky-700 m-1 mb-5"></div>
 
         <frame_a>
             <div class="bg-sky-500 text-sky-100 round p-1">Adresse:</div>
-            <div class="text-sky-700" data-bind="text: address"></div>
+            <div class="text-sky-700" data-bind="text: Address"></div>
         </frame_a>
 
        
@@ -47,17 +48,17 @@
             <div class="bg-sky-500 text-sky-100 round p-1">Kontakt:</div>
             <frame_b>
                 <div class="text-sky-700 p-1">Telefon:</div>
-                <div class="text-sky-700" data-bind="text: phone"></div>
+                <div class="text-sky-700" data-bind="text: Phone"></div>
             </frame_b>
             <frame_b>
                 <div class="text-sky-700 p-1">Fax:</div>
-                <div class="text-sky-700" data-bind="text: fax"></div>
+                <div class="text-sky-700" data-bind="text: Fax"></div>
             </frame_b>
         </frame_a>
 
         <frame_a>
             <div class="bg-sky-500 text-sky-100 round p-1">Öffnungszeiten:</div>
-            <div data-bind="foreach: openingHours">
+            <div data-bind="foreach: OpeningHours">
                 <frame_b>
                     <div class="text-sky-700 p-1" data-bind="text: $data[0]"></div>
                     <div class="text-sky-700" data-bind="text: $data[1]"></div>
