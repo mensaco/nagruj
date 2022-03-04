@@ -3,6 +3,11 @@ function ViewModel() {
     // just after populating the json data object 
     // from the json file
 
+    var self = this;
+    self.showLanding = function(){
+        alert('Yaaay!');
+    }
+
 }
 
 function GetAsync(theUrl, callback)
@@ -16,11 +21,29 @@ function GetAsync(theUrl, callback)
     xmlHttp.send(null);
 }
 
-function htmlToElement(html) {
+function htmlToElement(html, attributes) {
     var template = document.createElement('template');
     html = html.trim(); // Never return a text node of whitespace as the result
+    
+
+    // add attributes if present
+    if(attributes && attributes.length > 0){
+        var arrat = [];
+        for (let i = 0; i < attributes.length; i++) {
+            const a = attributes[i];
+            arrat.push(a.name + '="' + a.value + '"');
+        }
+        var allat = arrat.join(' ');
+        var inspos = html.indexOf(' ');
+        var pre = html.substring(0, inspos);
+        var post = html.substring(inspos);
+        html = pre + ' ' + allat + ' ' + post;
+    }
+
     template.innerHTML = html;
-    return template.content.firstChild;
+
+    var fc = template.content.firstChild;
+    return fc;
 }
 
 // allow for using templated controls
@@ -34,7 +57,7 @@ function updateTemplates(){
          components.forEach(t => {
             var content = t.innerHTML;
             var newHtml = template.replace("{"+tag+"}", content);
-            var newElement = htmlToElement(newHtml);
+            var newElement = htmlToElement(newHtml, t.attributes);
             t.parentElement.replaceChild(newElement, t);
         });
     });
