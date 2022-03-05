@@ -8,6 +8,15 @@ function ViewModel() {
         alert('Yaaay!');
     }
 
+    
+}
+
+
+function GetKeyAndValue(prop){
+    return { 
+        key: Object.keys(prop)[0],
+        value: Object.values(prop)[0]
+    };
 }
 
 function GetAsync(theUrl, callback)
@@ -64,6 +73,8 @@ function updateTemplates(){
     
 
 }
+
+
 
 
 function GetData(){

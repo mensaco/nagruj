@@ -43,6 +43,9 @@
 }
 
 @layer utilities {
+
+
+
     .no-scrollbar::-webkit-scrollbar {
         display: none;
       }
@@ -51,4 +54,10 @@
         -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none;  /* Firefox */
       }
+
+      .striped div:nth-child(even) {
+        @apply bg-sky-100
+      }
+
+
   }
