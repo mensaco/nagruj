@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
@@ -14,14 +14,17 @@
 
 <body>
 
+
+
+
     <!-- begin templates -->
 
     <template>
-        <div class="h-full p-1 px-3 text-white hover:text-sky-900 leading-7 bg-white/10 hover:bg-white/70">
+        <div class="h-full p-1 px-2 text-white hover:text-sky-900 leading-7 bg-white/10 hover:bg-white/70">
             {menu_i}
         </div>
-    </template>    
-    
+    </template>
+
     <template>
         <div class="mb-5 bg-sky-50/50 border border-sky-500/20">
             <div class="p-1 px-3">
@@ -37,166 +40,413 @@
     </template>
 
     <template>
-        <div class="text-3xl text-cyan-500 round py-1">{hdr}</div>
+        <div class="font-bold text-xl text-cyan-700 mb-2">{hdr1}</div>
     </template>
 
+    <template>
+        <div class="text-2xl text-cyan-500 round py-1">{hdr2}</div>
+    </template>
 
-    <!-- end templates -->
+    <template>
+        <div class="text-3xl text-cyan-500 round py-1">{hdr3}</div>
+    </template>
+
+    <template>
+        <div class="h-1 my-[11rem] md:my-[14rem] lg:my-[16rem]">&nbsp;{pusher}</div>
+    </template>
+
+    <template>
+        <div class="px-3 max-w-screen-xl mx-auto mb-3">
+            {para}
+        </div>
+    </template>
+
+    <template>
+        <div class="text-xl sm:text-2xl italic">
+            {pxli}
+        </div>
+    </template>
+
+    <template>
+        <div class="max-w-sm rounded">
+            {staff}
+        </div>
+    </template>
+
+    <template>
+        <div class="w-full sm:w-1/2 md:w-1/3">
+            {cont}
+        </div>
+    </template>
+
+    <!-- /templates -->
 
 
-    <div class="p-1 sm:p-3 h-screen bg-white/90 max-w-screen-xl mx-auto text-sky-700">
+    <!-- header -->
+    <div class="sticky z-10  py-3 top-0 bg-white">
+        <div class="h-10 px-3 max-w-screen-xl mx-auto mb-3">
+            <div class="h-10 bg-sky-500">
+                <div class=" h-full flex justify-start items-center gap-x-[0.1rem]">
+                    <menu_i>
+                        <a data-bind="click: hideImpressum" href="#top">
+                            <svg enable-background="new 0 0 38.1 38.1" height="100%" version="1.1"
+                                viewBox="0 0 38.1 38.1" xmlns="http://www.w3.org/2000/svg">
+                                <style type="text/css">
+                                    .st0 {
+                                        fill: #00A5CB;
+                                    }
 
-        <div class="sticky top-3 h-10 bg-sky-500">
-            <div class=" h-full flex justify-start items-center gap-x-[1px]">
-                <menu_i data-bind="click: showLanding">
-                <svg enable-background="new 0 0 38.1 38.1" height="100%" version="1.1" viewBox="0 0 38.1 38.1"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <style type="text/css">
-                        .st0 {
-                            fill: #00A5CB;
-                        }
+                                    .st1 {
+                                        fill: #0190B0;
+                                    }
 
-                        .st1 {
-                            fill: #0190B0;
-                        }
+                                    .st2 {
+                                        fill: #FFFFFF;
+                                    }
 
-                        .st2 {
-                            fill: #FFFFFF;
-                        }
-
-                        .st3 {
-                            fill: #F2F2F2;
-                        }
-                    </style>
-                    <path class="st0" d="M19,37.8C8.6,37.8,0.2,29.4,0.2,19S8.6,0.1,19,0.1" />
-                    <path class="st1" d="M19,0.1c10.4,0,18.8,8.4,18.8,18.8S29.4,37.8,19,37.8" />
-                    <circle class="st2" cx="8.2" cy="27.5" r="2.7" />
-                    <circle class="st2" cx="17.5" cy="3.2" r="1.1" />
-                    <circle class="st2" cx="20.5" cy="3.2" r="1.1" />
-                    <path class="st2"
-                        d="m14.3 13.7l0.2 1c0.5-0.2 0.9-0.4 1.4-0.6 2.5-0.8 5-0.6 7.3 0.6h0.1l0.2-1c-2.5-1.2-5.2-1.4-7.9-0.5-0.5 0.1-0.9 0.3-1.3 0.5z" />
-                    <path class="st2" d="m18.1 2.2z" />
-                    <path class="st2"
-                        d="m30 22.8c-0.4-3.2-2.3-6.2-5-8.1l-0.2 1.1c2.3 1.8 3.8 4.4 4.2 7.1 0.4 2.8-0.6 5.4-2.6 7.3-1.1 1-2.9 1.5-4.3 1.2-0.8-0.2-1.8-0.6-2.4-1.9-0.2-0.5-0.3-1-0.5-1.5-0.1-0.5-0.2-0.9-0.2-1.4 0.1-0.5 0.2-1.1 0.5-1.6 0.1-0.3 0.2-0.5 0.4-0.7 0.1-0.2 0.3-0.4 0.5-0.5 0.4-0.3 0.8-0.5 1.1-0.8 0.6-0.5 1-1.2 1.3-1.9 0.9-1.8 1.3-3.7 1.6-5.5l0.2-1.1c0.3-1.9 0.6-3.8 0.8-6.1v-0.3c0.2-1.6 0.3-3.5-0.9-4.8-0.8-0.9-2-1-3.1-0.9 0.3 0.2 0.4 0.5 0.4 0.9v0.1c0.8 0 1.5 0.1 2 0.6 1 1 0.8 2.6 0.7 4v0.3c-0.2 2.1-0.4 4-0.7 5.7l-0.2 1c-0.3 1.9-0.7 3.9-1.6 5.6-0.3 0.5-0.6 1.1-1.1 1.6-0.1 0.1-0.2 0.1-0.3 0.2-0.1 0-0.2 0.1-0.3 0.2-0.5 0.3-1.1 0.4-1.7 0.3-0.1 0-0.2 0-0.3-0.1-1.2-0.3-2.4-1.4-2.9-2.7-0.6-1.6-1-3.2-1.3-4.8l-0.2-1.4-0.3-2.1c-0.1-0.5-0.1-0.9-0.2-1.4-0.3-2-0.7-4.1 0.2-5.7 0.6-1.1 1.6-1.5 2.6-1.6v-0.1c0-0.4 0.2-0.7 0.5-0.9-1.8 0-3.3 0.8-4 2.2-1 2-0.6 4.3-0.3 6.4 0.1 0.5 0.2 0.9 0.2 1.4 0.1 0.8 0.2 1.6 0.4 2.5l0.2 1.1c0.3 1.7 0.7 3.3 1.3 4.9 0.2 0.6 0.6 1.1 1 1.6 0.2 0.2 0.5 0.4 0.7 0.7 0.3 0.3 0.7 0.5 0.9 0.9 0.3 0.4 0.7 0.9 0.9 1.5 0.2 0.7 0.2 1.5 0.3 2.2 0.1 0.9 0.3 1.7 0.7 2.5 0.6 1.3 1.7 2.2 3.1 2.5 0.4 0.1 0.7 0.1 1.1 0.1 1.4 0 2.9-0.6 4-1.5 2.2-2.3 3.3-5.2 2.8-8.3z" />
-                    <path class="st2"
-                        d="m8.2 19.8c-0.7 1.5-1 3-0.9 4.4l1-0.1c-0.1-1.2 0.2-2.6 0.8-3.9 0.9-1.8 2.1-3.2 3.6-4.4l-0.2-1.1c-1.7 1.3-3.3 3-4.3 5.1z" />
-                </svg>
-                </menu_i>
-                <menu_i>
-                </menu_i>
-                <menu_i>
-                Leistungen
-                </menu_i>
-                <menu_i>
-                Organisation
-                </menu_i>
-                <menu_i>
-                Praxis
-                </menu_i>
-                <menu_i>
-                Kontakt
-                </menu_i>
+                                    .st3 {
+                                        fill: #F2F2F2;
+                                    }
+                                </style>
+                                <path class="st0" d="M19,37.8C8.6,37.8,0.2,29.4,0.2,19S8.6,0.1,19,0.1" />
+                                <path class="st1" d="M19,0.1c10.4,0,18.8,8.4,18.8,18.8S29.4,37.8,19,37.8" />
+                                <circle class="st2" cx="8.2" cy="27.5" r="2.7" />
+                                <circle class="st2" cx="17.5" cy="3.2" r="1.1" />
+                                <circle class="st2" cx="20.5" cy="3.2" r="1.1" />
+                                <path class="st2"
+                                    d="m14.3 13.7l0.2 1c0.5-0.2 0.9-0.4 1.4-0.6 2.5-0.8 5-0.6 7.3 0.6h0.1l0.2-1c-2.5-1.2-5.2-1.4-7.9-0.5-0.5 0.1-0.9 0.3-1.3 0.5z" />
+                                <path class="st2" d="m18.1 2.2z" />
+                                <path class="st2"
+                                    d="m30 22.8c-0.4-3.2-2.3-6.2-5-8.1l-0.2 1.1c2.3 1.8 3.8 4.4 4.2 7.1 0.4 2.8-0.6 5.4-2.6 7.3-1.1 1-2.9 1.5-4.3 1.2-0.8-0.2-1.8-0.6-2.4-1.9-0.2-0.5-0.3-1-0.5-1.5-0.1-0.5-0.2-0.9-0.2-1.4 0.1-0.5 0.2-1.1 0.5-1.6 0.1-0.3 0.2-0.5 0.4-0.7 0.1-0.2 0.3-0.4 0.5-0.5 0.4-0.3 0.8-0.5 1.1-0.8 0.6-0.5 1-1.2 1.3-1.9 0.9-1.8 1.3-3.7 1.6-5.5l0.2-1.1c0.3-1.9 0.6-3.8 0.8-6.1v-0.3c0.2-1.6 0.3-3.5-0.9-4.8-0.8-0.9-2-1-3.1-0.9 0.3 0.2 0.4 0.5 0.4 0.9v0.1c0.8 0 1.5 0.1 2 0.6 1 1 0.8 2.6 0.7 4v0.3c-0.2 2.1-0.4 4-0.7 5.7l-0.2 1c-0.3 1.9-0.7 3.9-1.6 5.6-0.3 0.5-0.6 1.1-1.1 1.6-0.1 0.1-0.2 0.1-0.3 0.2-0.1 0-0.2 0.1-0.3 0.2-0.5 0.3-1.1 0.4-1.7 0.3-0.1 0-0.2 0-0.3-0.1-1.2-0.3-2.4-1.4-2.9-2.7-0.6-1.6-1-3.2-1.3-4.8l-0.2-1.4-0.3-2.1c-0.1-0.5-0.1-0.9-0.2-1.4-0.3-2-0.7-4.1 0.2-5.7 0.6-1.1 1.6-1.5 2.6-1.6v-0.1c0-0.4 0.2-0.7 0.5-0.9-1.8 0-3.3 0.8-4 2.2-1 2-0.6 4.3-0.3 6.4 0.1 0.5 0.2 0.9 0.2 1.4 0.1 0.8 0.2 1.6 0.4 2.5l0.2 1.1c0.3 1.7 0.7 3.3 1.3 4.9 0.2 0.6 0.6 1.1 1 1.6 0.2 0.2 0.5 0.4 0.7 0.7 0.3 0.3 0.7 0.5 0.9 0.9 0.3 0.4 0.7 0.9 0.9 1.5 0.2 0.7 0.2 1.5 0.3 2.2 0.1 0.9 0.3 1.7 0.7 2.5 0.6 1.3 1.7 2.2 3.1 2.5 0.4 0.1 0.7 0.1 1.1 0.1 1.4 0 2.9-0.6 4-1.5 2.2-2.3 3.3-5.2 2.8-8.3z" />
+                                <path class="st2"
+                                    d="m8.2 19.8c-0.7 1.5-1 3-0.9 4.4l1-0.1c-0.1-1.2 0.2-2.6 0.8-3.9 0.9-1.8 2.1-3.2 3.6-4.4l-0.2-1.1c-1.7 1.3-3.3 3-4.3 5.1z" />
+                            </svg>
+                        </a>
+                    </menu_i>
+                    <menu_i>
+                        <a data-bind="click: hideImpressum" href="#team">Team</a>
+                    </menu_i>
+                    <menu_i>
+                        <a data-bind="click: hideImpressum" href="#services">Leistungen</a>
+                    </menu_i>
+                    <menu_i>
+                        <a data-bind="click: hideImpressum" href="#office">Praxis</a>
+                    </menu_i>
+                    <menu_i>
+                        <a data-bind="click: hideImpressum" href="#contact">Kontakt</a>
+                    </menu_i>
+                </div>
             </div>
         </div>
-        <div class="h-1 mb-5">&nbsp;</div>
 
-
-        <div class="md:relative">
-
-            <img class="min-h-[12rem] object-cover mb-5 shadow-lg" src="/img/background.jpg">
-
-            <div class="md:absolute md:top-10 left-4 md:p-3">
-                <div data-bind="text: MainTitle()" class="text-4xl text-cyan-500 m-1 px-1"></div>
-                <div data-bind="text: MainSubtitle()" class="m-1 px-1 md:text-lg"></div>
-            </div>
-        </div>
-
-        <div class="text-red-500 font-bold sm:hidden">xs</div>
+        <!-- <div class="text-red-500 font-bold sm:hidden">xs</div>
         <div class="text-red-500 font-bold hidden sm:block md:hidden">sm</div>
         <div class="text-red-500 font-bold hidden md:block lg:hidden">md</div>
         <div class="text-red-500 font-bold hidden lg:block xl:hidden">lg</div>
         <div class="text-red-500 font-bold hidden xl:block 2xl:hidden">xl</div>
         <div class="text-red-500 font-bold hidden 2xl:block 3xl:hidden">2xl</div>
         <div class="text-red-500 font-bold hidden 3xl:block 4xl:hidden">3xl</div>
-        <div class="text-red-500 font-bold hidden 4xl:block 5xl:hidden">4xl</div>
+        <div class="text-red-500 font-bold hidden 4xl:block 5xl:hidden">4xl</div> -->
 
-        <div class="grid grid-cols-1 gap-x-5 lg:grid-cols-1 2xl:grid-cols-4">
+        <para>
+            <img class="h-40 md:h-60 lg:h-80 object-cover" src="/img/background.jpg">
+        </para>
 
-
-            <div class="grid md:grid-cols-2 md:gap-x-5 2xl:grid-cols-1" >
-
-                <div class="">
-                    <frame_a>
-                        <hdr>Adresse:</hdr>
-                        <div class="" data-bind="text: Address"></div>
-                    </frame_a>
-                    <frame_a>
-                        <hdr>Kontakt:</hdr>
-                        <div data-bind="foreach: Contact">
-                                <frame_b>
-                                    <div class="p-1" data-bind="text: $data[0]"></div>
-                                    <div class="" data-bind="text: $data[1]"></div>
-                                </frame_b>
-                            </div>
-                    </frame_a>
-                </div>
-                <div>
-                    <frame_a>
-                        <hdr>Öffnungszeiten:</hdr>
-                        <div class="striped">
-                            <div data-bind="foreach: OpeningHours">
-                                <frame_b>
-                                    <span class="p-1" data-bind="html: $data[0]"></span>
-                                    <span class="text-sm" data-bind="html: $data[1]"></span>
-                                </frame_b>
-                            </div>
-                        </div>
-                        
-                    </frame_a>
-                </div>
+        <para>
+            <div class="bg-gray-100 px-1 py-3">
+                <hdr3>
+                    <div data-bind="text: MainTitle()"></div>
+                </hdr3>
+                <div class="italic" data-bind="text: MainSubtitle()"></div>
             </div>
 
-            <div class="col-span-2 2xl:col-span-3">
-                <frame_a>
-                    <hdr>Leistungen:</hdr>
-                    <div data-bind="foreach: Services">
-                        <div class="text-xl p-1" data-bind="text: $data[0]"></div>
-                        <ul class="list-disc ml-3 mb-5 p-3" data-bind="foreach: $data[1]">
-                            <li class="ml-5" data-bind="text: $data"></li>
-                        </ul>
-                    </div>
-                </frame_a>
-            </div>
-
-        </div>
-
-        <!-- staff cards -->
-        <div>
-            <div class="flex gap-5" data-bind="foreach: Staff">
-<!--                 
-                <pre data-bind="text: ('/img/staff/' + GetKeyAndValue($data).key + '.jpg')"></pre> -->
-
-                <div class="max-w-sm rounded shadow-lg">
-                    <img class="h-64 mx-auto" data-bind="attr : {src: ('/img/staff/' + GetKeyAndValue($data).key + '.jpg'), alt: GetKeyAndValue($data).key}" >
-                    <div class="px-6 py-4">
-                      <div class="font-bold text-xl mb-2" data-bind="text: GetKeyAndValue($data).key"></div>
-                      <p class="text-gray-700 text-base"  data-bind="text: GetKeyAndValue($data).value"></p>
-                    </div>
-                    <!-- <div class="px-6 pt-4 pb-2">
-                      <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-                      <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
-                      <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
-                    </div> -->
-                  </div>
-
-            </div>
-        </div>
-
-        <div class="m-5 p-5">&nbsp;</div>
-
+        </para>
     </div>
+    <!-- /header -->
+
+
+    <!-- ko if: !isImpressum() -->
+
+    <!-- landing -->
+    <para>
+        <p class="sm:text-xl" data-bind="text: Landing().Willkommen"></p>
+    </para>
+    <para>
+        <pxli data-bind="text: Landing().Freude"></pxli>
+    </para>
+    <para>
+        &nbsp;
+    </para>
+
+    <!-- ko if: (Covid().Inhalt!= "") -->
+    <para>
+        <div class="text-amber-900 bg-amber-300 p-3 rounded-md">
+            <div class="text-xl sm:text-2xl font-bold mb-3" data-bind="text: Covid().Titel"></div>
+            <p class="text-justify  sm:text-xl" data-bind="html: Covid().Inhalt"></p>
+        </div>
+    </para>
+    <!-- /ko -->
+
+    <!-- /landing -->
+
+
+    <!-- team -->
+
+    <a name="team"></a>
+    <pusher></pusher>
+    <!-- staff cards -->
+
+    <para>
+        <hdr3>Unser Team:</hdr3>
+    </para>
+
+
+    <para>
+        <div class="flex flex-wrap sm:justify-between items-top gap-x-5 gap-y-10">
+
+
+
+            <staff>
+                <hdr1 data-bind="text: Owner().Name"></hdr1>
+                <div>Praxisinhaberin</div>
+                <div class="h-64 w-full overflow-hidden">
+                    <img class="object-cover object-center" src="/img/staff/Ursula Jurgan.jpg" alt="Ursula Jurgan">
+                </div>
+            </staff>
+
+            <staff>
+                <hdr1>Beruflicher Werdegang:</hdr1>
+                <ul class="list-disc p-3" data-bind="foreach: Owner().CV">
+                    <li class="ml-5" data-bind="text: $data"></li>
+                </ul>
+            </staff>
+            <staff>
+                <hdr1>Mitgliedschaften:</hdr1>
+                <ul class="list-disc p-3" data-bind="foreach: Owner().Memberships">
+                    <li class="ml-5" data-bind="text: $data"></li>
+                </ul>
+            </staff>
+        </div>
+
+    </para>
+
+    <para>&nbsp;</para>
+
+    <para>
+        <div class="flex flex-wrap sm:justify-between gap-x-5 gap-y-10">
+
+            <!-- ko foreach: Staff -->
+    
+            <staff>    
+                <div class="h-56 w-full overflow-hidden">
+                    <img class="object-cover object-center"
+                        data-bind="attr : {src: ('/img/staff/' + GetKeyAndValue($data).key + '.jpg'), alt: GetKeyAndValue($data).key}">
+                </div>
+    
+                <div class="px-6 py-4 bg-gray-100">
+                    <hdr1 data-bind="text: GetKeyAndValue($data).key"></hdr1>
+                    <p class="text-gray-700 text-base" data-bind="text: GetKeyAndValue($data).value"></p>
+                </div>
+    
+            </staff>
+            <!-- /ko -->
+    
+        </div>
+    </para>
 
     
+
+
+
+    <!-- /team -->
+
+
+    <!-- services -->
+
+    <a name="services"></a>
+    <pusher></pusher>
+
+    <para>
+        <hdr3>Leistungen:</hdr3>
+        <div data-bind="foreach: Services">
+            <hdr1 data-bind="text: $data[0]"></hdr1>
+            <ul class="list-disc p-3" data-bind="foreach: $data[1]">
+                <li class="ml-5" data-bind="text: $data"></li>
+            </ul>
+        </div>
+    </para>
+
+
+
+    <!-- /services -->
+
+
+    <!-- office -->
+
+
+    <a name="office"></a>
+    <pusher></pusher>
+
+    <para>
+        <hdr3 data-bind="text: Office().Title"> </hdr3>
+        <div data-bind="text: Office().Description"></div>
+        <div class="mt-3" data-bind="text: Office().ListPretext"></div>
+        <ul class="list-disc p-3" data-bind="foreach: Office().List">
+            <li class="ml-5" data-bind="text: $data"></li>
+        </ul>
+        <div class="" data-bind="text: Office().ListPosttext"></div>
+
+    </para>
+
+    <!-- /office -->
+
+
+    <!-- contact -->
+    <a name="contact"></a>
+    <pusher></pusher>
+
+    <para>
+        <div class="flex flex-wrap sm:justify-between items-top gap-x-5 gap-y-10">
+            <cont>
+                <hdr3>Adresse:</hdr3>
+                <frame_b>
+                    <div class="" data-bind="text: Address"></div>
+                    <a target="_blank" class="h-8"
+                        href="https://www.google.com/maps/dir//praxis+Jurgan+bonn/@50.6784015,7.0706581,20z/data=!4m9!4m8!1m0!1m5!1m1!1s0x47bee25bde5cbcc5:0x178a16ff3e081fec!2m2!1d7.0708999!2d50.678431!3e0">
+                        <svg version="1.1" height="100%" viewBox="0 0 1919.9999 1093.1821" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="a" x1="1587.1" x2="1587.1" y1="1465.4" y2="1873.2"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#ef0000" offset="0" />
+                                    <stop stop-color="#c80000" offset="1" />
+                                </linearGradient>
+                            </defs>
+                            <g transform="translate(-238.07 791.59)">
+                                <g transform="matrix(48.183 0 0 48.183 -4976.6 -47091)">
+                                    <g transform="matrix(1 0 .42142 .42314 -470.95 553.28)">
+                                        <g transform="matrix(1 -.37123 0 1 -16.739 71.852)">
+                                            <path transform="translate(0 548.36)" d="m180 433.53v13.531h10v-13.531h-10z"
+                                                fill="#7fc94c" />
+                                            <path transform="translate(0 548.36)"
+                                                d="m180.03 447.06v2.9062h9.9688v-2.9062h-9.9688z" fill="#f9f792" />
+                                            <path transform="translate(0 548.36)" d="m180 449.97v13.562h10v-13.562h-10z"
+                                                fill="#4ca0c9" />
+                                        </g>
+                                        <g transform="matrix(1 .30494 0 1 -16.771 -56.621)">
+                                            <path transform="translate(0 548.36)" d="m190 433.53v13.531h10v-13.531h-10z"
+                                                fill="#7fc94c" />
+                                            <path transform="translate(0 548.36)"
+                                                d="m190 447.06v2.9062h3.5625v13.562h2.9062v-13.562h3.5312v-2.9062h-9.9999z"
+                                                fill="#f9f792" />
+                                            <path transform="translate(0 548.36)"
+                                                d="m196.47 449.97v13.562h3.5312v-13.562h-3.5312z" fill="#c9a14c" />
+                                            <path transform="translate(0 548.36)" d="m190 449.97v13.562h3.5625v-13.562h-3.5625z"
+                                                fill="#4ca0c9" />
+                                        </g>
+                                        <g transform="matrix(1 -.55243 0 1 -.1875 104.3)">
+                                            <path d="m183.26 999.64v13.562h10v-13.562h-10z" fill="#c9a14c" />
+                                            <path d="m183.26 983.2v13.531h10v-13.531h-10z" fill="#7fc94c" />
+                                            <path d="m183.26 996.73v2.9062h10v-2.9062h-10z" fill="#f9f792" />
+                                        </g>
+                                        <path
+                                            d="m173.24 983.23-0.0132 13.526 5e-3 2.9293-0.0132 13.526 3.5746 1.12 2.918 0.8616 3.538 1.0339-0.0232-13.526 0.0314-2.9293-0.0232-13.526-9.9941-3.0154z"
+                                            fill-opacity=".15217" />
+                                    </g>
+                                    <g transform="matrix(.033414 0 0 .033414 77.2 945.19)">
+                                        <path transform="translate(0 -995.64)"
+                                            d="m1731.4 1612.3c0 79.687-144.29 266.52-144.29 324.14 0-57.579-144.29-244.45-144.29-324.14s64.599-144.29 144.29-144.29 144.29 64.599 144.29 144.29z"
+                                            fill="url(#a)" stroke="#a00000" stroke-linecap="square" stroke-linejoin="round"
+                                            stroke-width="4.7895" />
+                                        <circle transform="matrix(.83958 0 0 .83958 239.09 -741.47)" cx="1605.6" cy="1614.1"
+                                            r="59.094" fill="#a00000" />
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+        
+                    </a>
+                </frame_b>
+        
+            </cont>
+            <cont>
+                <hdr3>Kontakt:</hdr3>
+                <div data-bind="foreach: Contact">
+                    <frame_b>
+                        <div class="p-1" data-bind="text: $data[0] + ':'"></div>
+                        <div class="" data-bind="text: $data[1]"></div>
+                    </frame_b>
+                </div>
+            </cont>
+            <cont>
+                <hdr3>Öffnungszeiten:</hdr3>
+                <div class="striped">
+                    <div data-bind="foreach: OpeningHours">
+                        <frame_b>
+                            <span class="p-1" data-bind="html: $data[0]"></span>
+                            <span class="text-sm" data-bind="html: $data[1]"></span>
+                        </frame_b>
+                    </div>
+                </div>
+            </cont>
+        </div>
+    </para>
+
+    <div class="m-5">&nbsp;</div>
+
+
+
+
+
+    <!-- /contact -->
+
+    <!-- /ko -->
+
+
+    <!-- impressum -->
+
+    <!-- ko if: isImpressum() -->
+    <para>
+        <hdr3>Impressum</hdr3>
+
+        <div class="text-2xl" data-bind="text: Owner().Name"> </div>
+        <div data-bind="text: MainSubtitle"></div>
+        <div data-bind="text: Address"></div>
+
+        <div data-bind="foreach: Contact">
+            <frame_b>
+                <div class="p-1" data-bind="text: $data[0] + ':'"></div>
+                <div class="" data-bind="text: $data[1]"></div>
+            </frame_b>
+        </div>
+
+        <hdr3>Inhaltlich verantwortlich</hdr3>
+        <div data-bind="text: Impressum().InhaltlichVerantwortlich"></div>
+
+        <hdr3>Zuständige Landesärztekammer (Aufsichtbehörde)</hdr3>
+        <div class="" data-bind="html: Impressum().ZustLandKamm.replace(/\n/g,'&lt;br/>')"></div>
+
+        <hdr3>Zuständige Kassenärztliche Vereinigung</hdr3>
+        <div class="" data-bind="html: Impressum().ZustKassVE.replace(/\n/g,'&lt;br/>')"></div>
+
+        <hdr3>Berufsbezeichnung</hdr3>
+        <div class="" data-bind="text: Impressum().Berufsbezeichnung"></div>
+
+        <hdr3>Berufsrechtliche Regelungen</hdr3>
+        <div class="" data-bind="foreach: Impressum()['Berufsrechtliche Regelungen']">
+            <div data-bind="text: $data[0]"></div>
+            <a target="_blank" data-bind="text: $data[1], attr:{href: $data[1]}"></a>
+        </div>
+
+        <div data-bind="text: Impressum().Haftungsausschluss"></div>
+
+    </para>
+
+    <!-- /ko -->
+
+    <!-- /impressum -->
+
+    <!-- <pre data-bind="text: ko.toJSON($data, null, 2)"></pre> -->
+
 </body>
 
 <script src='/js/index.js'></script>

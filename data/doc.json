@@ -2,6 +2,14 @@
     "MainTitle": "Praxis Ursula Jurgan",
     "MainSubtitle": "Fachärztin für Innere und Allgemeinmedizin",
     "Moto": "",
+    "Landing":{
+        "Willkommen":"Herzlich willkommen in unserer Praxis. Wir begleiten Sie und beraten Sie in Fragen der Gesundheit.",
+        "Freude":"Wir freuen uns auf Ihren Besuch!"
+    },
+    "Covid":{
+        "Titel":"Covid-19 - Information",
+        "Inhalt":"Solange die Lieferungen des Impfstoffs von BioNTech gekürzt werden, führen wir Auffrischungsimpfungen nur zwischen 12 und 29 Jahren durch. Für diese Altersgruppe steht nur dieser Impfstoff zur Verfügung. Bitte nutzen Sie die Möglichkeit der Freitestung zur Verkürzung der Quarantäne oder Isolation mit einem qulifizierten Schnelltest in den Testzentren in Ihrer Umgebung. Ab sofort führen wir PCR-Testungen nur noch zu diagnostischen Zwecken durch."
+    },
     "Services": [
         [
             "Kategorie 1",
@@ -28,11 +36,11 @@
             ]
         ]
     ],
-    "Address": "Reichsstraße 56, 53125 Bonn",
+    "Address":"Reichsstraße 56, 53125 Bonn",
     "GoogleMapsUrl": "https://www.google.com/maps/dir//praxis+Jurgan+bonn/@50.6784099,7.0006887,12z/data=!3m1!4b1!4m9!4m8!1m0!1m5!1m1!1s0x47bee25bde5cbcc5:0x178a16ff3e081fec!2m2!1d7.0708999!2d50.678431!3e0",
     "Contact": [
         [
-            "Phone",
+            "Telefon",
             "0228 92120850"
         ],
         [
@@ -74,6 +82,21 @@
             "geschlossen"
         ]
     ],
+    "Owner": {
+        "Name": "Ursula Jurgan",
+        "CV": [            
+            "Management eines Teams von 25 freiberuflichen Textschreibern und Koordination der Content-Entwicklung von der ersten Idee bis zur Veröffentlichung",
+            "Beratung von Kunden zu kurz- und mittelfristigen Strategiefragen zur Optimierung des personalisierten Brandings.",
+            "Feinschliff von Texten zur Gewährleistung der inhaltlichen Konsistenz in den verschiedenen Kommunikationskanälen"
+        ],
+        "Memberships": [
+            "Ausbildung bzw. akademischer Werdegang.",
+            "Auslandsaufenthalte.",
+            "Bisherige akademische Positionen und Anstellungen",
+            "Veröffentlichungen.",
+            "Mitgliedschaften in Fachgesellschaften, Gremien, Beiräten etc"
+        ]
+    },
     "Staff": [
         {
             "Lilly Washere": "Lilli war mal hier. Dann hat man darüber eine schöne Melodie geschrieben und nach ihr benannt."
@@ -84,5 +107,31 @@
         {
             "Katja Kurzhaar": "Katja liebt ihre Ohrringe. Diese sieht man noch viel besser, wenn sie nicht von Haaren bedeckt sind."
         }
-    ]
+    ],
+    "Office":{
+        "Title":"Unsere Praxis",
+        "Description":"Der Praxiseingang befindet sich auf der Hauptstraße. Sie betreten die Praxis über einen Vorraum...",
+        "ListPretext":"In der Praxis finden Sie:",
+        "List":[
+            "Empfang und Anmeldung",
+            "Zwei Sprechzimmer",
+            "Ein Behandlungszimmer",
+            "Ein Wartezimmer"
+        ],
+        "ListPosttext":""
+    },
+    "Impressum":{
+        
+        "InhaltlichVerantwortlich":"Ursula Jurgan",
+        "ZustLandKamm":"Ärztekammer Nordrhein \nTersteegenstraße 9 \n40474 Düsseldorf",
+        "ZustKassVE":"Kassenärztliche Vereinigung Nordrhein\nTersteegenstraße 9, 40474 Düsseldorf",
+        "Berufsbezeichnung":"Ärztin, verliehen in der Bundesrepublik Deutschland",
+        "Berufsrechtliche Regelungen":[
+            ["Berufsordnung der Ärztekammer Nordrhein","https://www.aekno.de/aerzte/berufsordnung"],
+            ["Heilberufsgesetz des Landes NRW","https://recht.nrw.de/lmi/owa/br_text_anzeigen?v_id=10000000000000000065"]
+        ],
+        "Haftungsausschluss":"Bei externen Links achten wir grundsätzlich auf die Seriosität der Betreiber. Dennoch: Trotz sorgfältiger Kontrolle übernehmen wir keine Haftung für die Inhalte externer Seiten. Für die Inhalte externer Seiten sind ausschließlich deren Betreiber verantwortlich.",
+        "Quellen":[]
+
+    }
 }
