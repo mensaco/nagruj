@@ -8,7 +8,7 @@
     <title>Praxis Jurgan</title>
     <link href="/css/Styles.css" rel="stylesheet">
     <script src='/js/knockout-min.js'></script>
-    <script src='https://cdn.tailwindcss.com'></script>
+    <!-- <script src='https://cdn.tailwindcss.com'></script> -->
 
 </head>
 
@@ -88,7 +88,7 @@
             <div class="h-10 bg-sky-500">
                 <div class=" h-full flex justify-start items-center gap-x-[0.1rem]">
                     <menu_i>
-                        <a data-bind="click: hideImpressum" href="#top">
+                        <a data-bind="click: showDefault" href="#top">
                             <svg enable-background="new 0 0 38.1 38.1" height="100%" version="1.1"
                                 viewBox="0 0 38.1 38.1" xmlns="http://www.w3.org/2000/svg">
                                 <style type="text/css">
@@ -124,16 +124,16 @@
                         </a>
                     </menu_i>
                     <menu_i>
-                        <a data-bind="click: hideImpressum" href="#team">Team</a>
+                        <a data-bind="click: showDefault" href="#team">Team</a>
                     </menu_i>
                     <menu_i>
-                        <a data-bind="click: hideImpressum" href="#services">Leistungen</a>
+                        <a data-bind="click: showDefault" href="#services">Leistungen</a>
                     </menu_i>
                     <menu_i>
-                        <a data-bind="click: hideImpressum" href="#office">Praxis</a>
+                        <a data-bind="click: showDefault" href="#office">Praxis</a>
                     </menu_i>
                     <menu_i>
-                        <a data-bind="click: hideImpressum" href="#contact">Kontakt</a>
+                        <a data-bind="click: showDefault" href="#contact">Kontakt</a>
                     </menu_i>
                 </div>
             </div>
@@ -165,7 +165,7 @@
     <!-- /header -->
 
 
-    <!-- ko if: !isImpressum() -->
+    <!-- ko if: currentView() == DEFAULT_VIEW() -->
 
     <!-- landing -->
     <para>
@@ -370,11 +370,13 @@
             </cont>
             <cont>
                 <hdr3>Kontakt:</hdr3>
-                <div data-bind="foreach: Contact">
-                    <frame_b>
-                        <div class="p-1" data-bind="text: $data[0] + ':'"></div>
-                        <div class="" data-bind="text: $data[1]"></div>
-                    </frame_b>
+                <div class="striped">
+                    <div data-bind="foreach: Contact">
+                        <frame_b>
+                            <div class="p-1" data-bind="text: $data[0] + ':'"></div>
+                            <div class="" data-bind="text: $data[1]"></div>
+                        </frame_b>
+                    </div>
                 </div>
             </cont>
             <cont>
@@ -386,6 +388,7 @@
                             <span class="text-sm" data-bind="html: $data[1]"></span>
                         </frame_b>
                     </div>
+                    
                 </div>
             </cont>
         </div>
@@ -394,17 +397,17 @@
     <div class="m-5">&nbsp;</div>
 
 
-
-
-
     <!-- /contact -->
 
     <!-- /ko -->
 
+    
 
     <!-- impressum -->
 
-    <!-- ko if: isImpressum() -->
+    <!-- ko if: currentView() == IMPRESSUM_VIEW() -->
+    <a name="impressum"></a>
+    <pusher></pusher>
     <para>
         <hdr3>Impressum</hdr3>
 
@@ -412,38 +415,64 @@
         <div data-bind="text: MainSubtitle"></div>
         <div data-bind="text: Address"></div>
 
-        <div data-bind="foreach: Contact">
+        <div class="max-w-xs" data-bind="foreach: Contact">
             <frame_b>
-                <div class="p-1" data-bind="text: $data[0] + ':'"></div>
+                <div class="" data-bind="text: $data[0] + ':'"></div>
                 <div class="" data-bind="text: $data[1]"></div>
             </frame_b>
         </div>
 
-        <hdr3>Inhaltlich verantwortlich</hdr3>
+        <hdr2>Inhaltlich verantwortlich</hdr2>
         <div data-bind="text: Impressum().InhaltlichVerantwortlich"></div>
 
-        <hdr3>Zuständige Landesärztekammer (Aufsichtbehörde)</hdr3>
+        <hdr2>Zuständige Landesärztekammer (Aufsichtbehörde)</hdr2>
         <div class="" data-bind="html: Impressum().ZustLandKamm.replace(/\n/g,'&lt;br/>')"></div>
 
-        <hdr3>Zuständige Kassenärztliche Vereinigung</hdr3>
+        <hdr2>Zuständige Kassenärztliche Vereinigung</hdr2>
         <div class="" data-bind="html: Impressum().ZustKassVE.replace(/\n/g,'&lt;br/>')"></div>
 
-        <hdr3>Berufsbezeichnung</hdr3>
+        <hdr2>Berufsbezeichnung</hdr2>
         <div class="" data-bind="text: Impressum().Berufsbezeichnung"></div>
 
-        <hdr3>Berufsrechtliche Regelungen</hdr3>
+        <hdr2>Berufsrechtliche Regelungen</hdr2>
         <div class="" data-bind="foreach: Impressum()['Berufsrechtliche Regelungen']">
             <div data-bind="text: $data[0]"></div>
-            <a target="_blank" data-bind="text: $data[1], attr:{href: $data[1]}"></a>
+            <a target="_blank" class="text-sky-700" data-bind="text: $data[1], attr:{href: $data[1]}"></a>
         </div>
 
-        <div data-bind="text: Impressum().Haftungsausschluss"></div>
+        <hdr2>Externe Links</hdr2>
+        <div class="" data-bind="text: Impressum().Haftungsausschluss"></div>
 
     </para>
 
     <!-- /ko -->
 
     <!-- /impressum -->
+
+    <!-- privacy -->
+
+    <!-- ko if: currentView() == PRIVACY_VIEW() -->
+    <a name="privacy"></a>
+    <pusher></pusher>
+    <para>
+        <hdr3>Datenschutzhinweise</hdr3>
+
+        <div class="mb-3 grid grid-cols-1 gap-3" data-bind="html: Datenschutzhinweise().Http.replace('{VerDat}',datVer())"> </div>
+
+    </para>
+
+    <!-- /ko -->
+
+    <!-- /privacy -->
+
+
+    <hr>
+    <para>
+        <div class="text-teal-700">
+            © Ärztin Ursula Jurgan | Bonn - Röttgen | <a  data-bind="click: showImpressum" href="#impressum" >Impressum</a> | 
+            <a  data-bind="click: showPrivacy" href="#privacy">Datenschutz</a>
+        </div>
+    </para>
 
     <!-- <pre data-bind="text: ko.toJSON($data, null, 2)"></pre> -->
 

@@ -4,14 +4,29 @@ function ViewModel() {
     // from the json file
 
     var self = this;
-    self.isImpressum = ko.observable(false);
-    self.showImpressum = function () {
-        self.isImpressum(true);
+    self.DEFAULT_VIEW = ko.observable(0);
+    self.IMPRESSUM_VIEW = ko.observable(1);
+    self.PRIVACY_VIEW = ko.observable(2);
+
+    self.currentView = ko.observable(self.PRIVACY_VIEW());
+    self.showDefault = function () {
+        self.currentView(self.DEFAULT_VIEW());
         return true;
     }
-    self.hideImpressum = function () {
-        self.isImpressum(false);
+    self.showImpressum = function () {
+        self.currentView(self.IMPRESSUM_VIEW());
         return true;
+    }
+    self.showPrivacy = function () {
+        self.currentView(self.PRIVACY_VIEW());
+        return true;
+    }
+
+    self.datVer = function(){
+        return self.Owner().Name + ", " + self.Address() + ", " +
+                self.Contact()[0][0] + ": " + self.Contact()[0][1] + ", " +
+                self.Contact()[1][0] + ": " + self.Contact()[1][1] + ", " +
+                self.Contact()[2][0] + ": " + self.Contact()[2][1];
     }
 
 }
