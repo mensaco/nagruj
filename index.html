@@ -8,7 +8,7 @@
     <title>Praxis Jurgan</title>
     <link href="/css/Styles.css" rel="stylesheet">
     <script src='/js/knockout-min.js'></script>
-    <!-- <script src='https://cdn.tailwindcss.com'></script> -->
+    <!-- <script src='https://cdn.tailwindcss.com'></script>  -->
 
 </head>
 
@@ -18,6 +18,14 @@
 
 
     <!-- begin templates -->
+
+    <!-- <template id="pusher">
+        <div class="h-1 my-[17rem] md:my-[14rem] lg:my-[16rem]">&nbsp;{pusher}</div>
+    </template> -->
+
+    <template id="pusher">
+        <div style="">&nbsp;{pusher}</div>
+    </template>
 
     <template>
         <div class="h-full p-1 px-2 text-white hover:text-sky-900 leading-7 bg-white/10 hover:bg-white/70">
@@ -51,9 +59,6 @@
         <div class="text-3xl text-cyan-500 round py-1">{hdr3}</div>
     </template>
 
-    <template>
-        <div class="h-1 my-[11rem] md:my-[14rem] lg:my-[16rem]">&nbsp;{pusher}</div>
-    </template>
 
     <template>
         <div class="px-3 max-w-screen-xl mx-auto mb-3">
@@ -83,7 +88,7 @@
 
 
     <!-- header -->
-    <div class="sticky z-10  py-3 top-0 bg-white">
+    <div id="menu_header" class="sticky z-10  py-3 top-0 bg-white">
         <div class="h-10 px-3 max-w-screen-xl mx-auto mb-3">
             <div class="h-10 bg-sky-500">
                 <div class=" h-full flex justify-start items-center gap-x-[0.1rem]">

@@ -8,7 +8,7 @@ function ViewModel() {
     self.IMPRESSUM_VIEW = ko.observable(1);
     self.PRIVACY_VIEW = ko.observable(2);
 
-    self.currentView = ko.observable(self.PRIVACY_VIEW());
+    self.currentView = ko.observable(self.DEFAULT_VIEW());
     self.showDefault = function () {
         self.currentView(self.DEFAULT_VIEW());
         return true;
@@ -22,11 +22,11 @@ function ViewModel() {
         return true;
     }
 
-    self.datVer = function(){
+    self.datVer = function () {
         return self.Owner().Name + ", " + self.Address() + ", " +
-                self.Contact()[0][0] + ": " + self.Contact()[0][1] + ", " +
-                self.Contact()[1][0] + ": " + self.Contact()[1][1] + ", " +
-                self.Contact()[2][0] + ": " + self.Contact()[2][1];
+            self.Contact()[0][0] + ": " + self.Contact()[0][1] + ", " +
+            self.Contact()[1][0] + ": " + self.Contact()[1][1] + ", " +
+            self.Contact()[2][0] + ": " + self.Contact()[2][1];
     }
 
 }
@@ -94,6 +94,13 @@ function updateTemplates() {
 }
 
 
+function FixPusher() {
+    var header = document.getElementById("menu_header");
+    var height = window.getComputedStyle(header).height.replace("px","");
+    var pusher = document.getElementById("pusher");
+    pusher.innerHTML = "<div style='height: " + (1.32*height) + "px !important'>&nbsp;{pusher}</div>";
+    var dummy = 0;
+}
 
 
 function GetData() {
@@ -133,6 +140,8 @@ function GetData() {
 
     });
 }
+
+FixPusher();
 
 GetData();
 
