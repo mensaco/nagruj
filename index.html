@@ -88,7 +88,7 @@
 
 
     <!-- header -->
-    <div id="menu_header" class="sticky z-10  py-3 top-0 bg-white">
+    <div id="menu_header" class="sticky z-10  py-3 top-0 bg-white/90">
         <div class="h-10 px-3 max-w-screen-xl mx-auto mb-3">
             <div class="h-10 bg-sky-500">
                 <div class=" h-full flex justify-start items-center gap-x-[0.1rem]">
@@ -154,11 +154,11 @@
         <div class="text-red-500 font-bold hidden 4xl:block 5xl:hidden">4xl</div> -->
 
         <para>
-            <img class="h-40 md:h-60 lg:h-80 object-cover" src="/img/background.jpg">
+            <img class="h-40 md:h-60 lg:h-80 object-cover shadow-md" src="/img/background.jpg">
         </para>
 
         <para>
-            <div class="bg-gray-100 px-1 py-3">
+            <div class="bg-gray-100 px-1 py-3 shadow-md">
                 <hdr3>
                     <div data-bind="text: MainTitle()"></div>
                 </hdr3>
@@ -173,6 +173,8 @@
     <!-- ko if: currentView() == DEFAULT_VIEW() -->
 
     <!-- landing -->
+
+    <div class="my-5 py-5">&nbsp;</div>
     <para>
         <p class="sm:text-xl" data-bind="text: Landing().Willkommen"></p>
     </para>
